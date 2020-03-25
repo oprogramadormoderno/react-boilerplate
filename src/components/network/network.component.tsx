@@ -28,17 +28,19 @@ class NetworkDetector extends React.PureComponent<IProps> {
   };
 
   private handleConnectionChange = () => {
+    const { connected } = this.props;
+
     if (navigator.onLine) {
       const webPing = setInterval(() => {
         fetch('//google.com', {
           mode: 'no-cors',
         })
           .then(() => {
+            if (!connected) this.syncData();
             store.dispatch({
               type: UPDATE_CONNECTION,
               payload: true,
             });
-            this.syncData();
             return clearInterval(webPing);
           })
           .catch(() => {

@@ -8,7 +8,7 @@ import { Network } from 'src/components';
 import SW from './components/sw/sw.component';
 import Routes from './routes/routes.component';
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 
 if (isMobile) {
   console.log('Mobile browser!');
@@ -19,6 +19,7 @@ const App: React.FC = () => {
     <Router history={history}>
       <Routes />
       <SW />
+      <Network />
     </Router>
   );
 };

@@ -1,9 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const MainScreen: React.FC = () => (
-  <>
-    <p>Main screen</p>
-  </>
-);
+import { logout } from 'src/store/auth/actions';
 
-export default MainScreen;
+import { IProps } from './main.type';
+
+const MainScreen: React.FC<IProps> = props => {
+  const handleLogout = () => {
+    return props.logout();
+  };
+
+  return (
+    <>
+      <p>
+        Main screen <button onClick={handleLogout}>sair</button>
+      </p>
+    </>
+  );
+};
+
+export default connect(undefined, { logout })(MainScreen);
