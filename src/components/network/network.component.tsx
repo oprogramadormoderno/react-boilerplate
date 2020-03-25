@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { store, IReduxState } from '@store';
-import { UPDATE_CONNECTION } from '@store/config/types';
+import { store, IReduxState } from 'src/store';
+import { UPDATE_CONNECTION } from 'src/store/config/types';
 
 import { IProps } from './network.type';
 import { Wrapper, Text } from './network.style';

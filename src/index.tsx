@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import { store, persistor } from '@store';
-// import { SW_INIT, SW_UPDATE } from '@store/config/types';
-import App from '@screens/app/app.component';
+import { store, persistor } from 'src/store';
+// import { SW_INIT, SW_UPDATE } from 'src/store/config/types';
+import App from 'src/screens/app/app.component';
 
-import 'assets/styles/global.scss';
+import 'src/assets/styles/global.scss';
 
 import * as serviceWorker from './serviceWorker';
 

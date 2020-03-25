@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import MainScreen from 'screens/main/main.component';
-import NotFound from 'screens/main/404/404.component';
+import MainScreen from 'src/screens/main/main.component';
+import NotFound from 'src/screens/error/404/404.component';
 
 import { IProps } from './client.type';
 
-const ClientRoutes = (props: IProps) => {
-  const ClientRoute = ({ component: Component, ...rest }: any) => {
-    const hasAccess = !!props.user;
+export default class ClientRoutes extends React.PureComponent<IProps> {
+  private ClientRoute = ({ component: Component, ...rest }: any) => {
+    const hasAccess = !!this.props.user;
 
     return (
       <Route
@@ -24,13 +24,16 @@ const ClientRoutes = (props: IProps) => {
     );
   };
 
-  return (
-    <Switch>
-      <ClientRoute path="/painel/" component={MainScreen} />
+  public render() {
+    const { user } = this.props;
+    const ClientRoute = this.ClientRoute;
 
-      <ClientRoute component={NotFound} />
-    </Switch>
-  );
-};
+    return (
+      <Switch>
+        <ClientRoute path="/painel/" component={MainScreen} />
 
-export default ClientRoutes;
+        {user && <ClientRoute component={NotFound} />}
+      </Switch>
+    );
+  }
+}

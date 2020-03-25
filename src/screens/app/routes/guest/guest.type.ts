@@ -1,5 +1,5 @@
-import { IUser } from 'interfaces/user';
+import { IUser } from 'src/interfaces/user';
 
 export interface IProps {
-  user: IUser;
+  user?: IUser;
 }

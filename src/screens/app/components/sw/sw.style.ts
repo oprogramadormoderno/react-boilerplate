@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors } from '@utils';
+import { colors } from 'src/utils';
 
 export const Wrapper = styled.div`
   background-color: rgba(33, 33, 33, 0.9);

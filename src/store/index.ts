@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
 import { IReducerConfigState } from './config/types';
+import { IReducerAuthState } from './auth/types';
 
 const middleware = [thunk];
 
@@ -21,4 +22,5 @@ export const persistor = persistStore(store);
 
 export interface IReduxState {
   config: IReducerConfigState;
+  auth: IReducerAuthState;
 }

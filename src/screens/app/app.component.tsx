@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 import { createBrowserHistory } from 'history';
 
-import { Container, Network } from '@components';
+import { Network } from 'src/components';
 
 import SW from './components/sw/sw.component';
 import Routes from './routes/routes.component';

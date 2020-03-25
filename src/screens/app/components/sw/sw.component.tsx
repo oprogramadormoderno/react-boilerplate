@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { IReduxState } from '@store';
+import { IReduxState } from 'src/store';
 
 import { IProps } from './sw.type';
 import { Wrapper, Button } from './sw.style';
